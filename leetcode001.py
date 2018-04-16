@@ -1,4 +1,5 @@
 # coding: utf-8
+
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -76,4 +77,12 @@ class Solution(object):
             else:
                 dict[target - nums[i]] = i
 
-print Solution().twoSum([1,3,5,7],10)
+def test():
+    s = Solution()
+    nums = [1,3,5,7]
+    target = 10
+
+    rs = s.twoSum(nums, target)
+    print rs
+
+test()

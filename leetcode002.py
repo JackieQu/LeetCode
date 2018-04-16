@@ -46,13 +46,30 @@ class Solution(object):
         return l1
 
 # test              
-l1 = ListNode(3)
-l1.next = ListNode(6)
-l1.next.next = ListNode(9)
+# l1 = ListNode(3)
+# l1.next = ListNode(6)
+# l1.next.next = ListNode(9)
 
-l2 = ListNode(2)
-l2.next = ListNode(5)
-l2.next.next = ListNode(8)
+# l2 = ListNode(2)
+# l2.next = ListNode(5)
+# l2.next.next = ListNode(8)
+
+def test():
+    l1 = initList([3, 6, 9]) 
+    l2 = initList([2, 5, 8]) 
+
+    rs = Solution().addTwoNumbers(l1, l2)
+    show(rs)
+
+def initList(list):
+    if list is None: return ListNode(0)
+    
+    rs = ListNode(list[0])
+    head = rs
+    for i in range(1, len(list)):
+        head.next = ListNode(list[i])
+        head = rs.next
+    return rs
 
 def show(rs):   
     showList = []
@@ -67,5 +84,4 @@ def show(rs):
             break
     print showList
 
-rs = Solution().addTwoNumbers(l1, l2)
-show(rs)
+test()
